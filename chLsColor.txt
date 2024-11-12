@@ -1,0 +1,6 @@
+
+# customize ls color
+MYTMP=$(echo $LS_COLORS | sed 's/01;05;37;41/01;37;41/')
+LS_COLORS=$MYTMP
+export LS_COLORS
+unset MYTMP
