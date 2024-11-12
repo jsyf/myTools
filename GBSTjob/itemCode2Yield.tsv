@@ -1,0 +1,3 @@
+#itemCode	itemName	dataType	column	amount	unit
+NIMS-V3-300P-1G-SO	MiSeq v3 300PE 1G	raw	TotalBases	1	G
+NIMS-IT1-300P-10W-PG	自製ITS1 rDNA 含標準分析【100000 reads】	clean	ReadPairs	100	K
