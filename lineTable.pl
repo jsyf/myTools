@@ -35,6 +35,10 @@ while (<IN>) {
     next;
   }
 
+  if (($. == 1) && ($_ =~ /^\x{FEFF}/)) { # UTF-8 BOM processing
+    $_ =~ s/^\x{FEFF}//;
+  }
+
   my @array = &csvsplit($_, $sep);
 
   for (my $i=0;$i<@array;$i++) {
@@ -63,6 +67,10 @@ while (<IN>) {
   chomp;
   if ($_ eq '') {
     next;
+  }
+
+  if (($. == 1) && ($_ =~ /^\x{FEFF}/)) { # UTF-8 BOM processing
+    $_ =~ s/^\x{FEFF}//;
   }
 
   my @array = &csvsplit($_, $sep);
