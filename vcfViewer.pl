@@ -12,6 +12,7 @@ while (<>) {
 
   my @array = split("\t", $_);
 
+  my @format;
   for (my $i=0;$i<@array;$i++) {
     my @list;
     if ($i == 7) {

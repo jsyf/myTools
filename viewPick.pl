@@ -18,7 +18,13 @@ while (<>) {
     $_ =~ s/^\x{FEFF}//;
   }
 
+  $_ =~ s/\'/&apos;/g;
+
   my @array = parse_line("\t", 0, $_);
+
+  for (my $i=0;$i<@array;$i++) {
+    $array[$i] =~ s/&apos;/\'/g;
+  }
 
   if ($. == 1) {
     @header = @array;
